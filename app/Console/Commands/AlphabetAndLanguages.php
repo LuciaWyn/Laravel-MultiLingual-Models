@@ -21,7 +21,7 @@ class AlphabetAndLanguages extends Command
     protected $description = 'Allows MultiLingual Models';
 
     protected $validSettings = ['a', 'l', 'al'];
-    protected $validForModel = [null, 's', '-seed', 'c', '-controller', 'crR', '-controller --resource --requests', '-policy', 'mfsc', 'a', '-all', 'p', '-pivot'];
+    protected $validForModel = [null, 's', '-seed', 'c', '-controller', 'crR', '-controller --resource --requests', '-policy', 'sc', 'a', '-all', 'p', '-pivot'];
     /**
      * Execute the console command.
      */
@@ -59,6 +59,9 @@ class AlphabetAndLanguages extends Command
                 if(($options == 'crR') || (((str_contains($options, '--resource')) && (str_contains($options, '--request'))))){
                     $resource = true;
                     $request = true;
+                }
+                else if($options == 'cr'){
+                    $resource = true;
                 }
             }
             else if($options == '--policy'){
